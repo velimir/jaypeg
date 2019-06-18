@@ -8,6 +8,12 @@ defmodule Jaypeg.MixProject do
       compilers: [:elixir_make] ++ Mix.compilers,
       elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
+      package: [
+        maintainers: ["Grigory Starinkin"],
+        files: ["lib", "priv", "mix.exs", "Makefile", "c_src", "README.md", "LICENSE"],
+        licenses: ["MIT"],
+        links: %{"GitHub" => "https://github.com/velimir/jaypeg"}
+      ]
       deps: deps()
     ]
   end
