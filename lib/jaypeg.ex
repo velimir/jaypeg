@@ -1,40 +1,28 @@
 defmodule Jaypeg do
   @moduledoc """
-  Documentation for Jaypeg.
+  Simple library for JPEG processing.
+
+  ## Decoding
+
+  ``` elixir
+  {:ok, <<104, 146, ...>>, [width: 2000, height: 1333, channels: 3]} =
+      Jaypeg.decode(File.read!("file/image.jpg"))
+  ```
   """
 
   @on_load :load_nifs
 
   @doc """
-  TODO: Write documentation.
+  Decode JPEG image and return information about the decode image such
+  as width, height and number of channels.
 
   ## Examples
 
-      iex> Jaypeg.hello()
-      :world
+      iex> Jaypeg.decode(File.read!("file/image.jpg"))
+      {:ok, <<104, 146, ...>>, [width: 2000, height: 1333, channels: 3]}
 
   """
   def decode(_encoded_image) do
-    :erlang.nif_error(:nif_not_loaded)
-  end
-
-  @doc """
-  TODO: Write documentation.
-
-  ## Examples
-
-  iex> Jaypeg.hello()
-  :world
-
-  """
-  def resize(
-        _in_binary,
-        _in_width,
-        _in_height,
-        _num_channels,
-        _out_width,
-        _out_height
-      ) do
     :erlang.nif_error(:nif_not_loaded)
   end
 
