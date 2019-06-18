@@ -4,7 +4,7 @@ CFLAGS += -I$(ERLANG_PATH)
 CFLAGS += -Ic_src
 CFLAGS += -g -DDEBUG -D_GNU_SOURCE
 ifeq ($(shell uname -s), Darwin)
-LDFLAGS += -flat_namespace -undefined suppress
+	LDFLAGS += -flat_namespace -undefined suppress
 endif
 LIB_SO_NAME = priv/jaypeg.so
 CFLAGS += -fPIC

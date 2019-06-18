@@ -13,7 +13,7 @@ defmodule Jaypeg.MixProject do
         files: ["lib", "priv", "mix.exs", "Makefile", "c_src", "README.md", "LICENSE"],
         licenses: ["MIT"],
         links: %{"GitHub" => "https://github.com/velimir/jaypeg"}
-      ]
+      ],
       deps: deps()
     ]
   end
