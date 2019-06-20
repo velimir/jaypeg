@@ -5,10 +5,13 @@ defmodule Jaypeg.MixProject do
     [
       app: :jaypeg,
       version: "0.1.0",
-      compilers: [:elixir_make] ++ Mix.compilers(),
       elixir: "~> 1.8",
+      description: description(),
+      compilers: [:elixir_make] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       elixirc_paths: elixirc_paths(Mix.env()),
+      elixirc_options: [warnings_as_errors: true],
+      test_coverage: [tool: ExCoveralls],
       package: [
         maintainers: ["Grigory Starinkin"],
         files: [
@@ -22,6 +25,7 @@ defmodule Jaypeg.MixProject do
         licenses: ["MIT"],
         links: %{"GitHub" => "https://github.com/velimir/jaypeg"}
       ],
+      source_url: "https://github.com/velimir/jaypeg",
       deps: deps()
     ]
   end
@@ -37,7 +41,8 @@ defmodule Jaypeg.MixProject do
   defp deps do
     [
       {:elixir_make, "~> 0.5.2", runtime: false},
-      {:ex_doc, "~> 0.20.2", runtime: false},
+      {:ex_doc, "~> 0.20.2", only: :dev, runtime: false},
+      {:excoveralls, "~> 0.11.1", only: :test},
       {:imgutils, "~> 0.1.0", only: :test}
     ]
   end
