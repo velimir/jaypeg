@@ -16,16 +16,23 @@ defmodule Jaypeg do
   Decode JPEG image and return information about the decode image such
   as width, height and number of channels.
 
-  ## Examples
+  ## Usage
 
-      iex> Jaypeg.decode(File.read!("file/image.jpg"))
-      {:ok, <<104, 146, ...>>, [width: 2000, height: 1333, channels: 3]}
+  ``` elixir
+  {:ok, <<104, 146, ...>>, [width: 2000, height: 1333, channels: 3]} =
+      Jaypeg.decode(File.read!("file/image.jpg"))
+  ```
 
   """
+  @spec decode(binary) ::
+          {:ok, binary} | {:error, :fmemopen} | {:error, :bad_jpeg}
   def decode(_encoded_image) do
+    # coveralls-ignore-start
     :erlang.nif_error(:nif_not_loaded)
+    # coveralls-ignore-stop
   end
 
+  @doc false
   def load_nifs do
     :ok = :erlang.load_nif(Application.app_dir(:jaypeg, "priv/jaypeg"), 0)
   end
