@@ -83,11 +83,16 @@ static ERL_NIF_TERM decode(ErlNifEnv *env, int argc,
     env, enif_make_atom(env, "ok"), bmp_term, properties_term);
 }
 
+static int upgrade(ErlNifEnv* env, void** priv, void** old_priv, ERL_NIF_TERM load_info)
+{
+  return 0;
+}
+
 static ErlNifFunc nif_funcs[] = {
   {"decode", 1, decode}
 };
 
-ERL_NIF_INIT(Elixir.Jaypeg, nif_funcs, NULL, NULL, NULL, NULL)
+ERL_NIF_INIT(Elixir.Jaypeg, nif_funcs, NULL, NULL, &upgrade, NULL)
 
 /* Local Variables: */
 /* c-basic-offset: 2 */
