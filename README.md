@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/velimir/jaypeg.svg?branch=master)](https://travis-ci.org/velimir/jaypeg) [![Coverage Status](https://coveralls.io/repos/github/velimir/jaypeg/badge.svg?branch=master)](https://coveralls.io/github/velimir/jaypeg?branch=master)
+
 # Jaypeg
 
 Minimalistic JPEG decoding library.
