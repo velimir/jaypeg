@@ -18,4 +18,4 @@ end
 ```
 
 The docs can be found at
-[https://hexdocs.pm/imgutils](https://hexdocs.pm/jaypeg).
+[https://hexdocs.pm/jaypeg](https://hexdocs.pm/jaypeg).
